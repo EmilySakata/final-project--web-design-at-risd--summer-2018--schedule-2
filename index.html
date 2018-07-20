@@ -1,33 +1,166 @@
 <!DOCTYPE html>
-<html lang="en jp" >
+<html lang="en">
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width,initial-scale=1">
-   <title>Emily Sakata </title>
+   <title>data analytics | strava project </title>
    <link href="css/reset.css" rel="stylesheet"><!-- DO NOT EDIT THIS LINE. -->
-   <link rel="stylesheet" href="css/main.css">
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-
-   <h1>坂田　絵茉莉 | Emily Sakata</h1>
-   <div class="position">
-   <nav>
-      <ul>
-         <li><a href="#">Home</a></li>
-         <li><a href="#">About</a><li>
-         <li><a herf="#"> Projects</a>
+   <main>
+      <nav>
             <ul>
-               <li><a href="#">Strava/SF/Marathon</a></li>
-               <li><a href="#">Financing/education</a></li>
-            </ul>
-         </li>
-         <li><a herf="#">Contact</a></li>
-      </ul>
-   </nav>
-   </div>
+               <li><a href="#">Home</a></li>
+               <li><a href="#overview">Overview</a></li>
+               <li><a href="#data-source">Data source</a></li>
+               <li><a href="#data-analysis">Analysis</a></li>
+               </ul>
+      </nav>
+      <div>
+            <div >
+               <h1>the San Francisco Marathon performance analysis</h1>
 
+               <img class= "opacity" src="img/gg-bw.jpg" alt="">
+               <img class= "opacity" src="img/gg-bw.jpg" alt="">
+               <img class= "opacity" src="img/gg-bw.jpg" alt="">
+            </div>
+            <br>
+            <div class="contribution">
+               <i>Written by Daniel Saw and Emily Sakata</i>
+            </div>
+      </div>
 
+         <div id= "overview" style = "margin-bottom: 180px;"></div>
+         <div>
+            <h2 >Overview</h2>
+            <p>This project is a python data analysis project conducted to learn how runners performed in <strong> the San Francisco Marathon</strong> race of 2017. </p>
+            <p>In order to have an insightful understanding of runners' performance, the San Francisco Marathon race results and Strava applicaiton users' running records were used. Those information were gathered from the websites using techniques such as data scraping, data cleansing, and data visualization through python programing.</p>
+            <p>Following questions were used to understand the sampled data demographics, significans of any outliers, and potential reasons behind how runners performed on the marathon race day.  </p>
+            <h2 > Key questions: </h2>
+
+         <ul>
+            <li>What does the Strava user population look like compared to overall marathon runners?</li>
+            <li>How did the Strava users perform at the race day compared to overall marathon runners?</li>
+            <li>How did top 20 Strava users perform on the race day?</li>
+            <li>What can we do to race for better performance?</li>
+         </ul>
+         </div>
+
+         <div id="data-source" style= "margin-bottom:200px;"> </div>
+         <div>
+            <h2> Data source </h2>
+            <p>Total of 1317 user running data was captured using data scraping technique to perform data gathering from the Strava website as well as the official San Francisco Marathon result page. The inforamtion was first formatted, and then used to learn about the different demographics of the Strava users compared to the 2017 San Francisco Marathon official results.</p>
+            <br>
+            <p><i>Reference</i></p>
+            <p>San Francisco marathon race result: <a href=" https://www.runraceresults.com/Secure/RaceResults.cfm?ID=RCLF2017">San Francisco official marathon</a>
+            <p>San Francisco marathon Strava race result: <a href="https://www.strava.com/running-races/2017-san-francisco-marathon">Strava data</a>
+         </div>
+         <!-- provide margin for the link to be in a position within the page -->
+         <div id="data-analysis" style = "margin-top:10px;"></div>
+         <div>
+            <h2>Strava user demographics</h2>
+            <p>We first wanted to understnad what type of sampled demographics we are looking at when using Strava information compared to the overall population of the San Francisco marathon participants.
+               When we looked at the strava user population, we found that close to 19% of the total marathon runners were using Strava to monitor thier race performance.
+               Further more when looking the population by strava users by gender, the Strava users were made by 14% male and 4.9% female popultation compared to the total runners.
+               From this data we learned that compared to the overall race participants, where the population is made by 64.1% male and 35.9% female, the Strava users had 74% and 26% respectively. This result in Strava users having higher ratio of male runners compared to the overall sampled population.
+            </p>
+
+         </div>
+         <div class="figure">
+            <figure>
+               <img src="img/gender-demographics.png" alt="">
+               <figcaption>Strava user demographics compared to overall population</figcaption>
+            </figure>
+         </div>
+         <div>
+         <h2 > Race completion of Strava users by age and gender</h2>
+            <p> Using the official San Francisco marathon race result, scatter plot was produced to show the runners' overall race results by gender and age.
+                From this analysis, we can observe that the scatter plot is most dense between overall race result of 2:46:40 to 6:56:40.
+                There were no apparent observation of race performance based on gender, however there is a positive corrolation between runners' age and the overall time to complete the marathon.
+                We observed that the younger the runner is, the more likely the overall performance result in faster completion time.
+            </p>
+            <p> Plotting the same race result for Strava users, we can see that the scatter plot is most dense between overall reace result of 2:46:40 to 5:33:20.
+                The same positve corrolation between the age and the overall performance result is observed, and assuming from having more male population in the sample,the race results mean are faster compared to the overall population.
+            </p>
+         </div>
+         <div>
+            <figure>
+               <img src="img/sfmarathon-demographics.png" alt="">
+                  <figcaption>San Francisco Marathon completion by age and gender</figcaption>
+            </figure>
+            <figure>
+               <img src="img/sf-strava-demographics.png" alt="">
+                  <figcaption>Strava user completion by age and gender</figcaption>
+               </figure>
+         </div>
+         <div>
+            <h2 > Performance comparison between Strava users and overall race result</h2>
+            <p>Race results for the San Francisco marathon has normal distribution curve.
+               As Strava users population have more male population compared to the overall sample, Strava users runs 19:16 faster on average, but Strava users have higher spread in standard deviation.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Demographics</th>
+                  <th>Mean completion time </th>
+                  <th>Standard deviation </th>
+                </tr>
+             </thead>
+              <tbody>
+                <tr>
+                  <td>Overall runners </td>
+                  <td>04:45:37</td>
+                  <td>00:52:41</td>
+                </tr>
+                <tr>
+                  <td>Strava runners </td>
+                  <td>04:26:09</td>
+                  <td>00:54:26</td>
+                </tr>
+              </tbody>
+            </table>
+         </div>
+         <div>
+            <figure>
+               <img src="img/raceresults-mean-std.png" alt="">
+                  <figcaption>Overall race result and mean</figcaption>
+            </figure>
+         </div>
+         <div>
+         <h2>Elite runners</h2>
+         <p> For the elite runner group, we extracted top 20 runners' per mile pace information from the Strava website, and created a line plot.
+             It was interesting to note that all top 20 athletes were using Strava application to measure thier race performance.
+             Most of the top athletes kept their average mile pace fairly consistent even with elevation gain or drop throughout the race. (variation of pace for top 10 runners within 1:00)
+             Although we expected to see more runners with negative splits time, we were not able to identify any corrolation between negative split and overall completion.
+         </p></div>
+         <div>
+               <figure>
+                  <img src="img/top-ten-strava.png" alt="">
+                     <figcaption>Top 10 athletes per mile pace</figcaption></figure>
+               <figure>
+                  <img src="img/top-twinty-strava.png" alt="">
+                  <figcaption>Top 11 to 20 athletes per mile pace</figcaption></figure>
+         </div>
+         <!-- provide margin for the within the page -->
+         <div style = "margin:100px;"></div>
+         <div>
+         <h2 > Conclusion</h2>
+         <p>Through this analysis, we found that there were 20% of the San Francisco marathon participants using Strava application to track thier race result.
+            Of those Strava users, 74% were male population, and have about 10% more male compared to the overall race participants. We assume that this result in faster overall race completion time, and as a group tend to have more spread in the mean time of completion.
+            It was interesting to also note that the top athletes we sampled all used Strava applciation, and hense maybe contributing to the spread of mean standard deviation being wider than the overall sample for a smaller sample size.
+            From the top 20 athletes performance, we learned that the average pace per mile was very consistant even with the elevation gain and drop.
+            What we can learn from this analysis is that concistant pacing throughout the race is an important factor of achieving a desired race result. To prepare for your next race, I would suggest you practice running on up hills to keep your average pace consistant.
+         </p>
+         </div>
+   </main>
+   <footer>
+      <div class="contribution">
+      Github repository link : Strava_project <a href="https://github.com/EmilySakata/Strava_project"> <img src="img/GitHub-Mark-32px.png" alt="Strava-project repository"></a>
+      </div>
+      <div class="contribution">
+      Contributors' personal github link : <strong>Daniel Saw </strong> <a href="https://github.com/dsdata1"><img src="img/GitHub-Mark-32px.png" alt="Daniel Saw Github link"></a> | <strong> Emily Sakata</strong> <a href="https://github.com/EmilySakata"><img src="img/GitHub-Mark-32px.png" alt="Emily Sakata Github link"></a>
+      </div>
+   </footer>
 </body>
 </html>
